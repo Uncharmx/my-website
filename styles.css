@@ -4,11 +4,25 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-cream: #f4efe5;
+    --surface: #fffaf3;
+    --surface-soft: #f8f2e8;
+    --text: #3f3328;
+    --muted: #6f5f4f;
+    --forest: #5b7a3c;
+    --deep-forest: #3d5f31;
+    --moss: #8ca36a;
+    --earth: #8a5a3b;
+    --bark: #5f4332;
+    --border: rgba(91, 122, 60, 0.16);
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg-cream) 0%, #e2d6c4 100%);
 }
 
 .container {
@@ -19,7 +33,7 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--forest) 0%, var(--bark) 100%);
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -81,16 +95,16 @@ body {
     display: block;
     padding: 15px 30px;
     text-decoration: none;
-    color: #667eea;
+    color: var(--forest);
     font-weight: 600;
     transition: all 0.3s ease;
     border-bottom: 3px solid transparent;
 }
 
 .navigation a:hover {
-    color: #764ba2;
-    border-bottom-color: #764ba2;
-    background-color: #f5f5f5;
+    color: var(--bark);
+    border-bottom-color: var(--bark);
+    background-color: var(--surface-soft);
 }
 
 /* Main Content */
@@ -100,7 +114,7 @@ main {
 
 /* Intro Section */
 .intro-section {
-    background: white;
+    background: var(--surface);
     padding: 60px 20px;
     margin-bottom: 40px;
     border-radius: 10px;
@@ -109,7 +123,7 @@ main {
 }
 
 .intro-section h2 {
-    color: #667eea;
+    color: var(--forest);
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -125,9 +139,63 @@ main {
     margin-bottom: 50px;
 }
 
+.gallery-section {
+    margin-bottom: 50px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.gallery-header h2 {
+    color: var(--forest);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.gallery-header p {
+    color: var(--muted);
+    font-size: 1.05em;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.25fr 1.1fr;
+    gap: 20px;
+}
+
+.gallery-item {
+    background: var(--surface);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.gallery-item.featured {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 16px 18px 18px;
+    color: var(--muted);
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f1e6 100%);
+}
+
 .flowers-section h2 {
     text-align: center;
-    color: #667eea;
+    color: var(--forest);
     font-size: 2.5em;
     margin-bottom: 50px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -141,13 +209,22 @@ main {
 }
 
 .flower-card {
-    background: white;
+    background: var(--surface);
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border-left: 5px solid #667eea;
+    border-left: 5px solid var(--forest);
     animation: slideUp 0.6s ease-out;
+}
+
+.flower-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    display: block;
 }
 
 @keyframes slideUp {
@@ -164,7 +241,7 @@ main {
 .flower-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    border-left-color: #764ba2;
+    border-left-color: var(--earth);
 }
 
 .flower-icon {
@@ -174,20 +251,20 @@ main {
 }
 
 .flower-card h3 {
-    color: #764ba2;
+    color: var(--bark);
     font-size: 1.6em;
     margin-bottom: 10px;
 }
 
 .flower-card .origin {
-    color: #667eea;
+    color: var(--forest);
     font-size: 0.95em;
     margin-bottom: 12px;
     font-weight: 600;
 }
 
 .flower-card .description {
-    color: #555;
+    color: var(--muted);
     font-size: 0.95em;
     line-height: 1.7;
     margin-bottom: 15px;
@@ -202,7 +279,7 @@ main {
 
 .badge {
     display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--forest) 0%, var(--earth) 100%);
     color: white;
     padding: 5px 12px;
     border-radius: 20px;
@@ -212,7 +289,7 @@ main {
 
 /* Facts Section */
 .facts-section {
-    background: white;
+    background: var(--surface);
     padding: 60px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -221,7 +298,7 @@ main {
 
 .facts-section h2 {
     text-align: center;
-    color: #667eea;
+    color: var(--forest);
     font-size: 2.5em;
     margin-bottom: 40px;
 }
@@ -233,34 +310,34 @@ main {
 }
 
 .fact-card {
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: linear-gradient(135deg, rgba(91, 122, 60, 0.12) 0%, rgba(138, 90, 59, 0.12) 100%);
     padding: 25px;
     border-radius: 10px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid var(--forest);
     transition: all 0.3s ease;
 }
 
 .fact-card:hover {
     transform: translateX(5px);
-    border-left-color: #764ba2;
-    background: linear-gradient(135deg, #667eea25 0%, #764ba225 100%);
+    border-left-color: var(--earth);
+    background: linear-gradient(135deg, rgba(91, 122, 60, 0.18) 0%, rgba(138, 90, 59, 0.18) 100%);
 }
 
 .fact-card h4 {
-    color: #764ba2;
+    color: var(--bark);
     font-size: 1.2em;
     margin-bottom: 10px;
 }
 
 .fact-card p {
-    color: #555;
+    color: var(--muted);
     line-height: 1.6;
     font-size: 0.95em;
 }
 
 /* Conservation Section */
 .conservation-section {
-    background: white;
+    background: var(--surface);
     padding: 60px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -268,7 +345,7 @@ main {
 }
 
 .conservation-section h2 {
-    color: #667eea;
+    color: var(--forest);
     font-size: 2.5em;
     margin-bottom: 30px;
     text-align: center;
@@ -281,7 +358,7 @@ main {
 
 .conservation-content p {
     font-size: 1.1em;
-    color: #555;
+    color: var(--muted);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -291,24 +368,24 @@ main {
 }
 
 .conservation-list li {
-    background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+    background: linear-gradient(135deg, rgba(91, 122, 60, 0.10) 0%, rgba(138, 90, 59, 0.10) 100%);
     padding: 15px 20px;
     margin-bottom: 12px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid var(--forest);
     border-radius: 5px;
-    color: #555;
+    color: var(--muted);
     font-size: 0.95em;
     line-height: 1.6;
 }
 
 .conservation-list li:hover {
-    border-left-color: #764ba2;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left-color: var(--earth);
+    background: linear-gradient(135deg, rgba(91, 122, 60, 0.15) 0%, rgba(138, 90, 59, 0.15) 100%);
 }
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--forest) 0%, var(--bark) 100%);
     color: white;
     padding: 60px 20px;
     border-radius: 10px;
@@ -329,7 +406,7 @@ main {
 
 .cta-button {
     background: white;
-    color: #667eea;
+    color: var(--forest);
     padding: 15px 40px;
     font-size: 1.1em;
     font-weight: 600;
@@ -356,7 +433,7 @@ main {
     text-align: center;
     padding: 30px 20px;
     margin-top: 40px;
-    border-top: 4px solid #667eea;
+    border-top: 4px solid var(--forest);
 }
 
 .footer p {
@@ -387,7 +464,16 @@ main {
         grid-template-columns: 1fr;
     }
 
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item.featured {
+        transform: none;
+    }
+
     .intro-section h2,
+    .gallery-header h2,
     .flowers-section h2,
     .facts-section h2,
     .conservation-section h2,
@@ -438,7 +524,7 @@ main {
     }
 
     .navigation a:hover {
-        border-left-color: #764ba2;
+        border-left-color: var(--earth);
     }
 
     .flowers-grid {
@@ -447,6 +533,10 @@ main {
 
     .flower-card {
         padding: 20px;
+    }
+
+    .flower-photo {
+        height: 180px;
     }
 
     .flower-icon {
